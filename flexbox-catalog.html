@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Komputer Sejahtera</title>
+  <link rel="stylesheet" href="../UTS/css/style4.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/atur1.js"></script>
+  <style>
+    /* Style */
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+    }
+
+    .navbar-brand h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .carousel-item img {
+      height: 550px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 300px;
+      }
+    }
+
+    .catalog-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-card button {
+      background-color: #ffc107;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 12px;
+      font-weight: bold;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+    }
+
+    footer {
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: aquamarine;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#"><h1 style="color:#125d8a;">🖥️Toko Komputer Sejahtera</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex ms-auto me-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search" />
+          <button class="btn btn-outline-dark" type="submit">Cari</button>
+        </form>
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kategori">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contactForm">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="FAQsederhana.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="promo.html">Promo</a></li>
+        </ul>
+        <button onclick="toggleMode()" class="btn btn-dark ms-3">🌓 Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../UTS/asset/jumbo1.jpg" class="d-block w-100" alt="Slide 1" />
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Selamat Datang Di Toko Komputer Sejahtera</h1>
+          <p>Solusi komputer terpercaya untuk kebutuhan Anda.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../UTS/asset/jumbo2.jpg" class="d-block w-100" alt="Slide 2" />
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Koleksi Terbaru 2025</h1>
+          <p>Produk IT terkini untuk mendukung produktivitas Anda.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../UTS/asset/jumbo3.jpg" class="d-block w-100" alt="Slide 3" />
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Performa Maksimal</h1>
+          <p>Perangkat komputer dengan kualitas terbaik.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Sebelumnya</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Berikutnya</span>
+    </button>
+  </div>
+
+  <!-- Produk -->
+  <section id="kategori" class="container my-5">
+    <h2 class="text-center mb-4">Kategori Produk</h2>
+    <div id="kategoriCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="catalog-container">
+            <div class="product-card">
+              <img src="../UTS/asset/akse.jpg" alt="Aksesoris" />
+              <h3>Aksesoris</h3>
+              <P>Rp.150.000</P>
+              <button>Detail</button>
+            </div>
+            <div class="product-card">
+              <img src="../UTS/asset/casing.png" alt="Casing" />
+              <h3>Case</h3>
+              <P>Rp.30.000</P>
+              <button>Detail</button>
+            </div>
+            <div class="product-card">
+              <img src="../UTS/asset/keyboard.jpg" alt="Keyboard" />
+              <h3>Keyboard</h3>
+              <P>Rp.50.000</P>
+              <button>Detail</button>
+            </div>
+            <div class="product-card">
+              <img src="../UTS/asset/memori1.jpg" alt="Memori" />
+              <h3>Memori</h3>
+              <P>Rp.75.000</P>
+              <button>Detail</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="catalog-container">
+            <div class="product-card">
+              <img src="../UTS/asset/2.jpeg" alt="Aksesoris" />
+              <h3>Mouse</h3>
+              <P>Rp.80.000</P>
+              <button>Detail</button>
+            </div>
+            <div class="product-card">
+              <img src="../UTS/asset/laptop.jpg" alt="Casing" />
+              <h3>Laptop</h3>
+              <P>Rp.5.000.000</P>
+              <button>Detail</button>
+            </div>
+            <div class="product-card">
+              <img src="../UTS/asset/processor.jpg" alt="Keyboard" />
+              <h3>Processor</h3>
+              <P>Rp.450.000</P>
+              <button>Detail</button>
+            </div>
+            <div class="product-card">
+              <img src="../UTS/asset/Proyektor.jpg" alt="Memori" />
+              <h3>Proyektor</h3>
+              <P>Rp.750.000</P>
+            <button>Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Tombol Navigasi Kategori -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#kategoriCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#kategoriCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Tentang Kami --> 
+  <section id="tentang" class="container my-5"> 
+    <div class="row"> 
+      <div class="col-md-4"> 
+        <section id="Contact" style="padding: 80px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2256286884576!2d110.40906059999999!3d-6.9826794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.        1!3m3!1m2!1s0x2e708b4ec52229d7%3A0xc791d6abc9236c7!2sUniversitas%20Dian%20Nuswantoro!5e0!3m2!1sid!2sid!4v1762284968524!5m2!1sid!2sid"
+              height="350" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+      </div> 
+      <div class="col-md-8" style="text-align: justify;"> 
+        <h2>Tentang Kami</h2> 
+          <p>Untuk memenuhi kebutuhan pasar modern, Toko Komputer Sejahtera telah mengintegrasikan pengalaman belanja offline yang nyaman di toko fisik kami dengan platform e-commerce yang kuat. Layanan pembelian online dan pengiriman kami mencakup seluruh wilayah Indonesia, dari Sabang sampai Merauke, didukung oleh mitra logistik terpercaya yang menjamin paket Anda tiba dengan aman dan tepat waktu. Kami juga menyediakan berbagai metode pembayaran yang fleksibel dan aman. Kepuasan pelanggan adalah prioritas utama kami; kami terus mendengarkan feedback dan berupaya menyempurnakan setiap aspek operasional, dari kecepatan pemrosesan pesanan hingga pengemasan produk yang extra aman, demi memastikan pengalaman berbelanja Anda di Toko Komputer Sejahtera selalu menyenangkan dan memuaskan.</p> 
+          <p> Kami juga melayani pembelian online dan pengiriman ke seluruh Indonesia. Kepuasan pelanggan adalah prioritas utama kami. Kami memahami bahwa teknologi berkembang dengan sangat cepat. Oleh karena itu, Toko Komputer Sejahtera secara konsisten memperbarui inventaris produk kami, memastikan bahwa pelanggan selalu mendapatkan akses ke perangkat keras dan perangkat lunak IT terbaru dan paling efisien. Mulai dari laptop bisnis berperforma tinggi, komponen gaming kelas atas, hingga solusi jaringan untuk perkantoran, setiap item yang kami jual telah melalui proses seleksi dan pengujian kualitas yang ketat.</p>  
+      </div> 
+          
+  <form id="contactForm" onsubmit="return validateForm()">
+    <h2>Hubungi Kami</h2>
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+    <span id="namaError" class="error"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+    <span id="emailError" class="error"></span>
+
+    <label for="pesan">Pesan:</label>
+    <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan Anda di sini..."></textarea>
+
+    <button type="submit">Kirim Pesan</button>
+
+    <p id="successMsg" class="success"></p>
+  </form>
+
+  <script>
+    function validateForm() {
+    
+      let nama = document.getElementById("nama").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let namaError = document.getElementById("namaError");
+      let emailError = document.getElementById("emailError");
+      let successMsg = document.getElementById("successMsg");
+
+      namaError.textContent = "";
+      emailError.textContent = "";
+      successMsg.textContent = "";
+
+      let valid = true;
+
+      if (nama === "") {
+        namaError.textContent = "Nama wajib diisi!";
+        valid = false;
+      }
+
+      if (email === "") {
+        emailError.textContent = "Email wajib diisi!";
+        valid = false;
+      } else if (!email.includes("@") || !email.includes(".")) {
+        emailError.textContent = "Format email tidak valid!";
+        valid = false;
+      }
+
+      if (valid) {
+        successMsg.textContent = "Terima kasih! Pesan Anda berhasil dikirim.";
+        document.getElementById("contactForm").reset();
+      }
+
+      return false; 
+    }
+  </script>
+
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 p-3 bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Katalog Komputer Sejahtera</p>
+    <p><strong>NIM:</strong> A12.2022.06785 | <strong>Nama:</strong> Muhammad Nabil Fikri</p>
+  </footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

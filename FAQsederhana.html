@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Sederhana - Toko Komputer Sejahtera</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #125d8a;
+    }
+
+    /* Kotak FAQ */
+    .faq {
+      background-color: white;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .pertanyaan {
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #d9ebf7;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .jawaban {
+      display: none; /* disembunyikan dulu */
+      padding: 10px;
+      margin-top: 5px;
+      background-color: #eef6fb;
+      border-left: 3px solid #237dad;
+    }
+
+    .navbar-brand {
+    font-weight: bold;
+    }
+  
+  .navbar-nav .nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #000cba !important;
+  }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: aquamarine;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#"><h1 style="color:#125d8a;">🖥️Toko Komputer Sejahtera</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex ms-auto me-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search" />
+          <button class="btn btn-outline-dark" type="submit">Cari</button>
+        </form>
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kategori">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contactForm">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="FAQsederhana.html">FAQ</a></li>
+        </ul>
+        <button onclick="toggleMode()" class="btn btn-dark ms-3">🌓 Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <h2>FAQ - Toko Komputer Sejahtera</h2>
+
+  <!-- FAQ 1 -->
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(1)">
+      1. Apakah semua produk bergaransi?
+    </div>
+    <div class="jawaban" id="jawaban1">
+      Ya, semua produk memiliki garansi resmi antara 1 hingga 3 tahun, tergantung jenis produknya.
+    </div>
+  </div>
+
+  <!-- FAQ 2 -->
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(2)">
+      2. Apakah Toko Komputer Sejahtera menerima pembelian online?
+    </div>
+    <div class="jawaban" id="jawaban2">
+      Ya, kami menerima pembelian secara online melalui website resmi dan marketplace terpercaya.
+    </div>
+  </div>
+
+  <!-- FAQ 3 -->
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(3)">
+      3. Apakah tersedia layanan servis laptop?
+    </div>
+    <div class="jawaban" id="jawaban3">
+      Tentu! Kami melayani servis laptop dan komputer, seperti ganti RAM, SSD, dan instalasi software.
+    </div>
+  </div>
+
+  <script>
+    // Fungsi sederhana untuk menampilkan jawaban
+    function tampilJawaban(no) {
+      var jawaban = document.getElementById("jawaban" + no);
+      if (jawaban.style.display === "none") {
+        jawaban.style.display = "block";
+      } else {
+        jawaban.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
