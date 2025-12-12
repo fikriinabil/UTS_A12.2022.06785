@@ -1,0 +1,266 @@
+/* Halaman */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Font utama */
+  margin: 0;                                                     /* Hilangkan margin default */
+  background-color: #b0c8ec;                                   /* Warna background halaman */
+  scroll-behavior: smooth;                                       /* Scroll halus */
+}
+
+h2 {
+  text-align: center;     /* Judul di tengah */
+  color: #125d8a;       /* Warna biru */
+  padding: 15px 0;        /* Jarak atas bawah */
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: bold;      /* Teks brand tebal */
+}
+
+.navbar-nav .nav-link {
+  color: #333 !important;   /* Warna link navbar */
+  font-weight: 500;           /* Ketebalan */
+  transition: color 0.3s;     /* Animasi warna */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000cba !important; /* Warna saat hover */
+}
+
+/* Jumbotron / Carousel */
+.carousel-item img {
+  height: 550px;              /* Tinggi gambar */
+  object-fit: cover;          /* Mengisi tanpa distorsi */
+  filter: brightness(70%);    /* Gelapkan gambar */
+  transition: transform 1s;   /* Animasi saat slide */
+}
+
+.carousel-caption {
+  position: absolute;                       /* Teks di atas gambar */
+  bottom: 20%;                              /* Turun dari bawah */
+  text-shadow: 0 3px 10px rgba(0,0,0,0.7); /* Bayangan teks */
+}
+
+.carousel-caption h1 {
+  font-size: 3rem;            /* Ukuran besar */
+  font-weight: 700;           /* Tebal */
+  color: #fff;              /* Putih */
+  animation: fadeInDown 1s;   /* Animasi turun */
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;            /* Ukuran paragraf */
+  color: #e0e0e0;             /* Abu muda */
+  animation: fadeInUp 1.2s;     /* Animasi naik */
+}
+
+/* Animasi Teks Jumbotron */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }  /* Mulai buram + naik */
+  to { opacity: 1; transform: translateY(0); }        /* Selesai normal */
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }   /* Mulai buram + turun */
+  to { opacity: 1; transform: translateY(0); }        /* Selesai normal */
+}
+
+/* Indikator Carousel */
+.carousel-indicators [data-bs-target] {
+  background-color: #125d8a; /* Warna titik indikator */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);      /* Icon jadi putih */
+}
+
+/* Responsif Carousel */
+@media (max-width: 768px) {
+  .carousel-item img { height: 300px; }   /* Tinggi lebih kecil */
+  .carousel-caption h1 { font-size: 1.8rem; }
+  .carousel-caption p { font-size: 1rem; }
+}
+
+/* Layout umum */
+.container {
+  margin-top: 30px;          /* Jarak atas */
+  margin-bottom: 30px;       /* Jarak bawah */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: white;                  /* Latar putih */
+  padding: 20px;                              /* Ruang dalam */
+  border-radius: 10px;                        /* Sudut membulat */
+  height: fit-content;                        /* Tinggi sesuai isi */
+  box-shadow: 0 0 5px rgba(0,115,255,0.15); /* Shadow lembut */
+}
+
+.sidebar ul {
+  list-style: none;          /* Hilangkan bullet */
+  padding: 0;                /* Hilangkan padding */
+}
+
+.sidebar li {
+  margin-bottom: 10px;       /* Jarak antar list */
+}
+
+.sidebar a {
+  text-decoration: none;     /* Hilangkan garis bawah */
+  color: #125d8a;          /* Warna biru */
+  font-weight: 600;          /* Tebal */
+}
+
+.sidebar a:hover {
+  color: #0b4f70;            /* Biru lebih gelap */
+  text-decoration: underline;
+}
+
+/* Katalog Produk */
+.catalog-container {
+  display: flex;             /* Flexbox */
+  flex-wrap: wrap;           /* Bisa ke baris berikutnya */
+  justify-content: center;   /* Tengah */
+  gap: 20px;                 /* Jarak antar kartu */
+  padding: 20px 0;
+}
+
+.product-card {
+  width: 250px;                               /* Lebar kartu */
+  background-color: white;                  /* Warna latar */
+  border-radius: 15px;                        /* Sudut membulat */
+  box-shadow: 0 4px 10px #0b4f70;           /* Shadow biru */
+  text-align: center;                         /* Teks tengah */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animasi hover */
+}
+
+.product-card img {
+  width: 100%;                  /* Full lebar */
+  height: 180px;                /* Tinggi gambar */
+  object-fit: cover;            /* Memenuhi area */
+  border-radius: 15px 15px 0 0; /* Sudut atas */
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;           /* Jarak */
+  color: #0b4f70;            /* Biru gelap */
+}
+
+.product-card button {
+  background-color: #125d8a; /* Tombol biru */
+  border: none;
+  color: white;              /* Teks putih */
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s; /* Animasi */
+  margin-bottom: 15px;
+}
+
+.product-card button:hover {
+  background-color: #0b4f70; /* Biru lebih gelap */
+}
+
+.product-card:hover {
+  transform: translateY(-8px);              /* Naik saat hover */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2); /* Shadow lebih besar */
+}
+
+/* Formulir Kontak */
+form {
+  max-width: 500px;                         /* Lebar maksimal */
+  margin: 30px auto;                        /* Tengah */
+  background-color: white;                /* Putih */
+  padding: 25px;                            /* Ruang dalam */
+  border-radius: 10px;                      /* Sudut membulat */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Bayangan */
+}
+
+label {
+  display: block;              /* Satu baris */
+  margin-top: 10px;            /* Jarak atas */
+  font-weight: bold;           /* Tebal */
+  color: #333;                 /* Abu gelap */
+}
+
+input, textarea {
+  width: 100%;                 /* Penuh */
+  padding: 10px;               /* Ruang dalam */
+  margin-top: 5px;             /* Jarak atas */
+  border: 1px solid #ccc;      /* Border abu */
+  border-radius: 5px;          /* Sudut membulat */
+  font-size: 14px;
+}
+
+button {
+  background-color: #125d8a;   /* Tombol biru */
+  color: white;                /* Teks putih */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #0b4f70;   /* Hover gelap */
+}
+
+.error {
+  color: red;                  /* Pesan error */
+  font-size: 13px;
+}
+
+.success {
+  color: green;                /* Pesan sukses */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: aquamarine; /* Warna footer */
+  color: white;                 /* Warna teks */
+  text-align: center;           /* Tengah */
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Mode Gelap */
+.dark-mode {
+  background-color: #222;       /* Latar gelap */
+  color: #f5f5f5;               /* Teks terang */
+}
+
+.dark-mode nav,
+.dark-mode footer {
+  background-color: #111 !important; /* Navbar & footer lebih gelap */
+  color: #eee;                         /* Teks lebih terang */
+}
+
+.dark-mode .product-card,
+.dark-mode form {
+  background-color: #333;             /* Kartu & form gelap */
+  color: #f5f5f5;                     /* Teks terang */
+  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+}
+
+.dark-mode .product-card button {
+  background-color: #555;             /* Tombol gelap */
+}
+
+.dark-mode .product-card button:hover {
+  background-color: #777;             /* Hover */
+}
+
+/* Responsif tambahan */
+@media (max-width: 768px) {
+  .catalog-container { flex-direction: column; align-items: center; }
+  .product-card { width: 90%; }
+  .navbar-nav { text-align: center; }
+}
